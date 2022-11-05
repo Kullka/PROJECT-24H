@@ -39,11 +39,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   0000adbf  00000000  00000000  00041afd  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00081de3  00000000  00000000  0004c8bc  2**0
+ 18 .debug_str    00081de5  00000000  00000000  0004c8bc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000ce69f  2**0
+ 19 .comment      00000050  00000000  00000000  000ce6a1  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002720  00000000  00000000  000ce6f0  2**2
+ 20 .debug_frame  00002720  00000000  00000000  000ce6f4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -199,7 +199,7 @@ void getKeyInput() {
 					}
 					timerForKeyPress = TIME_CHANGE_TO_AUTO;
  800022a:	4b2b      	ldr	r3, [pc, #172]	; (80002d8 <getKeyInput+0x18c>)
- 800022c:	f44f 62fa 	mov.w	r2, #2000	; 0x7d0
+ 800022c:	f640 32b8 	movw	r2, #3000	; 0xbb8
  8000230:	601a      	str	r2, [r3, #0]
  8000232:	e035      	b.n	80002a0 <getKeyInput+0x154>
 				}
@@ -263,7 +263,7 @@ void getKeyInput() {
  800028a:	bf00      	nop
 						}
 						set_timer1(TIME_CHANGE_TO_AUTO - TIMER1);
- 800028c:	f240 50dc 	movw	r0, #1500	; 0x5dc
+ 800028c:	f44f 60fa 	mov.w	r0, #2000	; 0x7d0
  8000290:	f000 fab6 	bl	8000800 <set_timer1>
  8000294:	e004      	b.n	80002a0 <getKeyInput+0x154>
 					}
@@ -346,7 +346,7 @@ void fsm() {
  800032e:	4a61      	ldr	r2, [pc, #388]	; (80004b4 <fsm+0x1d4>)
  8000330:	6013      	str	r3, [r2, #0]
 			set_timer1(TIMER1);
- 8000332:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+ 8000332:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8000336:	f000 fa63 	bl	8000800 <set_timer1>
 		}
 		break;
@@ -371,7 +371,7 @@ void fsm() {
  8000356:	4618      	mov	r0, r3
  8000358:	f000 f8c6 	bl	80004e8 <display_7SEG1>
 			set_timer1(TIMER1);
- 800035c:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+ 800035c:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8000360:	f000 fa4e 	bl	8000800 <set_timer1>
 		}
 		break;
@@ -413,7 +413,7 @@ void fsm() {
  80003a2:	4618      	mov	r0, r3
  80003a4:	f000 f8a0 	bl	80004e8 <display_7SEG1>
 			set_timer1(TIMER1);
- 80003a8:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+ 80003a8:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  80003ac:	f000 fa28 	bl	8000800 <set_timer1>
 		}
 		break;
@@ -491,7 +491,7 @@ void fsm() {
  800042a:	4618      	mov	r0, r3
  800042c:	f000 f85c 	bl	80004e8 <display_7SEG1>
 			set_timer1(TIMER1);
- 8000430:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+ 8000430:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8000434:	f000 f9e4 	bl	8000800 <set_timer1>
 		}
 		break;
@@ -560,7 +560,7 @@ void fsm() {
  8000498:	480b      	ldr	r0, [pc, #44]	; (80004c8 <fsm+0x1e8>)
  800049a:	f000 fde4 	bl	8001066 <HAL_GPIO_TogglePin>
 		set_timer2(TIMER2);
- 800049e:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+ 800049e:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  80004a2:	f000 f9c9 	bl	8000838 <set_timer2>
 	}
 }
@@ -774,10 +774,10 @@ int main(void)
   reset_7SEG1();
  80005ea:	f7ff ff6f 	bl	80004cc <reset_7SEG1>
   set_timer1(TIMER1);
- 80005ee:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+ 80005ee:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  80005f2:	f000 f905 	bl	8000800 <set_timer1>
   set_timer2(TIMER2);
- 80005f6:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+ 80005f6:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  80005fa:	f000 f91d 	bl	8000838 <set_timer2>
   while (1)
   {

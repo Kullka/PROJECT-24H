@@ -13,12 +13,12 @@
 #define NORMAL_STATE GPIO_PIN_SET
 #define PRESSED_STATE GPIO_PIN_RESET
 #define NO_BUTTONS 			4
-#define TIME_INCREASE_VALUE 50
-#define TIME_CHANGE_TO_AUTO 100
+#define TIME_INCREASE_VALUE 1000
+#define TIME_CHANGE_TO_AUTO 2000
+
+extern int keyIsPressed[NO_BUTTONS];
+extern int keyIsKeeped[NO_BUTTONS];
 
 void getKeyInput();
-void key0Process();
-void key1Process();
-void key2Process();
 
 #endif /* INC_BUTTON_H_ */

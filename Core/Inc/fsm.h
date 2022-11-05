@@ -10,13 +10,9 @@
 
 extern int status;
 extern int counter;
-//extern int value1;
 
-// enum Auto_led {STATE0, STATE1, STATE2, STATE3};
-enum Mode {MODE1, MODE2};
+enum STATE {COUNT_DOWN, RES, INCREASE, KEEP_INC, DECREASE, KEEP_DEC};
 
 void fsm();
-//void fsm_manual();
-
 
 #endif /* INC_FSM_H_ */

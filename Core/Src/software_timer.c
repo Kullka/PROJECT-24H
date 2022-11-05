@@ -12,7 +12,6 @@ int timer1Flag;
 int timer2Flag;
 int timer1Counter;
 int timer2Counter;
-int value = COUNTER;
 
 void set_timer1(int duration){
 	timer1Counter = duration/PERIOD;

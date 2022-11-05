@@ -17,7 +17,7 @@
 #define SIX 0x7D
 #define SEVEN 0x07
 #define EIGHT 0x7F
-#define NINE 0x67
+#define NINE 0x6F
 #define OFF 0x7F
 
 void reset_7SEG1() {

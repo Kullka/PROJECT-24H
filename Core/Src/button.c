@@ -45,7 +45,7 @@ void getKeyInput() {
 				}
 				else {
 					keyIsPressed[i] = 0;
-					status = COUNT_DOWN;
+					status = RELEASED;
 				}
 			}
 			else {
@@ -61,7 +61,8 @@ void getKeyInput() {
 							status = KEEP_DEC;
 							break;
 						}
-						set_timer1(TIME_CHANGE_TO_AUTO - TIMER1);
+						timerForKeyPress = TIME_INCREASE_VALUE;
+						//set_timer1(TIME_INCREASE_VALUE);
 					}
 					else
 						keyIsKeeped[i] = 0;

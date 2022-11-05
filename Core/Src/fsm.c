@@ -14,12 +14,19 @@ int counter = COUNTER;
 
 void fsm() {
 	switch(status) {
+	case RELEASED:
+		//if (timer1Flag==1) {
+			display_7SEG1(counter);
+			set_timer1(TIMER_RELEASED);
+			status = COUNT_DOWN;
+		//}
+		break;
 	case COUNT_DOWN:
 		if (timer1Flag==1) {
-			display_7SEG1(counter);
 			if (counter>0)
 				counter--;
-			set_timer1(TIMER1);
+			display_7SEG1(counter);
+			set_timer1(TIMER_DEC);
 		}
 		break;
 	case RES:
@@ -27,7 +34,6 @@ void fsm() {
 			keyIsPressed[0] = 0;
 			counter = 0;
 			display_7SEG1(counter);
-			set_timer1(TIMER1);
 		}
 		break;
 	case INCREASE:
@@ -36,7 +42,7 @@ void fsm() {
 			counter++;
 			counter %= 10;
 			display_7SEG1(counter);
-			set_timer1(TIMER1);
+		//	set_timer1(TIMER_DEC);
 		}
 		break;
 	case KEEP_INC:
@@ -54,7 +60,6 @@ void fsm() {
 			if (counter==-1)
 				counter = 9;
 			display_7SEG1(counter);
-			set_timer1(TIMER1);
 		}
 		break;
 	case KEEP_DEC:
@@ -69,6 +74,6 @@ void fsm() {
 	}
 	if (timer2Flag==1) {
 		HAL_GPIO_TogglePin(GPIOA, LED_RED_Pin);
-		set_timer2(TIMER2);
+		set_timer2(TIMER_LED);
 	}
 }

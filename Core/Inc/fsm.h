@@ -11,7 +11,7 @@
 extern int status;
 extern int counter;
 
-enum STATE {COUNT_DOWN, RES, INCREASE, KEEP_INC, DECREASE, KEEP_DEC};
+enum STATE {RELEASED, COUNT_DOWN, RES, INCREASE, KEEP_INC, DECREASE, KEEP_DEC};
 
 void fsm();
 

@@ -14,7 +14,7 @@
 #define PRESSED_STATE GPIO_PIN_RESET
 #define NO_BUTTONS 			4
 #define TIME_INCREASE_VALUE 1000
-#define TIME_CHANGE_TO_AUTO 3000
+#define TIME_CHANGE_TO_AUTO 2000
 
 extern int keyIsPressed[NO_BUTTONS];
 extern int keyIsKeeped[NO_BUTTONS];

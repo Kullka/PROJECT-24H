@@ -9,8 +9,9 @@
 #define INC_SOFTWARE_TIMER_H_
 
 #define PERIOD 10
-#define TIMER1 1000
-#define TIMER2 1000
+#define TIMER_DEC 1000
+#define TIMER_LED 1000
+#define TIMER_RELEASED 3000
 #define COUNTER 9
 
 extern int timer1Counter;

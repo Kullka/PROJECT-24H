@@ -96,9 +96,9 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  reset_7SEG1();
-  set_timer1(TIMER1);
-  set_timer2(TIMER2);
+  display_7SEG1(COUNTER);
+  set_timer1(100);
+  set_timer2(100);
   while (1)
   {
 	  fsm();
